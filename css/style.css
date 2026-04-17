@@ -437,6 +437,20 @@ ul { list-style: none; }
   margin-bottom: 20px;
   line-height: 1.85;
 }
+.about-photo-wrap {
+  float: right;
+  margin: 0 0 28px 40px;
+  shape-outside: circle(50%);
+}
+.about-photo {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--cream-dark);
+  box-shadow: 0 8px 32px rgba(7, 12, 20, 0.12);
+}
 .about-right p:first-of-type {
   font-family: var(--font-display);
   font-size: 1.38rem;
