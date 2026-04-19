@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Banking System — Hikmet Bisen</title>
+  <meta name="description" content="Elite 102 — Python Banking System. A terminal-based banking app with SQLite, overdraft protection, wire transfers, and 40 unit tests.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        Hikmet Bisen
+        <span>Mechanical Engineer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="../Resume/resume.html">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="project-detail-hero">
+    <img
+      src="../assets/images/annapurna.jpg"
+      alt="Annapurna — Nepal"
+      class="project-detail-hero-img"
+    >
+    <div class="project-detail-overlay"></div>
+    <div class="project-mountain-credit">Annapurna — Nepal, 8,091m</div>
+
+    <div class="project-detail-hero-content">
+      <a href="projects.html" class="project-detail-back">← All Projects</a>
+      <div class="project-detail-meta">
+        <span class="project-detail-num">06 / 06</span>
+        <span class="project-detail-cat">Software Engineering</span>
+        <span class="project-detail-date">2025</span>
+      </div>
+      <h1 class="project-detail-title">Elite 102 —<br>Python Banking System</h1>
+      <p class="project-detail-subtitle">Terminal Banking Application · Python &amp; SQLite</p>
+    </div>
+  </section>
+
+  <!-- ── Content ── -->
+  <section class="project-detail-content">
+    <div class="container">
+      <div class="project-detail-grid">
+
+        <!-- Sidebar -->
+        <aside class="project-detail-sidebar">
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">Timeline</span>
+            <div class="project-sidebar-value">
+              <strong>2025</strong>
+              Elite 102 Final Project
+            </div>
+          </div>
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">Role</span>
+            <div class="project-sidebar-value">
+              <strong>Solo Developer</strong>
+              Full design, implementation &amp; testing
+            </div>
+          </div>
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">Category</span>
+            <div class="project-sidebar-value">
+              <strong>Software Engineering</strong>
+              Backend systems &amp; database design
+            </div>
+          </div>
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">Tools &amp; Skills</span>
+            <div class="project-tools-list">
+              <span class="project-tool-tag">Python 3</span>
+              <span class="project-tool-tag">SQLite</span>
+              <span class="project-tool-tag">OOP</span>
+              <span class="project-tool-tag">unittest</span>
+              <span class="project-tool-tag">Database Design</span>
+              <span class="project-tool-tag">ANSI Terminal UI</span>
+              <span class="project-tool-tag">Error Handling</span>
+              <span class="project-tool-tag">VS Code</span>
+            </div>
+          </div>
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">GitHub</span>
+            <div class="project-sidebar-value">
+              <a href="https://github.com/HikmetBisen/BankingApp" target="_blank" rel="noopener noreferrer" style="color: var(--steel-light); text-decoration: underline;">HikmetBisen/BankingApp →</a>
+            </div>
+          </div>
+          <div class="project-sidebar-section">
+            <span class="project-sidebar-label">Mountain</span>
+            <div class="project-sidebar-value">
+              <strong>Annapurna</strong>
+              8,091m — Among the most technically demanding 8,000m peaks. Like Annapurna, this project demanded precision at every step: one wrong transaction, one unhandled edge case, and the whole system fails. The golden sunrise on its ridgeline mirrors the satisfaction of 40 tests passing green.
+            </div>
+          </div>
+        </aside>
+
+        <!-- Body -->
+        <div class="project-detail-body">
+          <h2>Building a <strong>Banking System from Scratch</strong></h2>
+
+          <p>
+            For the Elite 102 final project, I designed and built a fully functional terminal-based banking application in Python — no external libraries, no shortcuts. The entire system runs on Python's built-in <code>sqlite3</code> module, managing a live relational database of accounts and transactions through a color-coded terminal interface.
+          </p>
+
+          <p>
+            The architecture is split across four modules: <code>database.py</code> handles the SQLite connection and schema initialization, <code>accounts.py</code> contains all business logic (deposits, withdrawals, transfers, interest), <code>ui.py</code> drives the ANSI color menu interface, and <code>main.py</code> ties it all together as the entry point. This separation of concerns mirrors the modular thinking I apply to mechanical systems — each component has a single responsibility and a defined interface.
+          </p>
+
+          <p>
+            The most challenging part was building the wire transfer system with proper atomic transactions — ensuring that if a debit succeeds but a credit fails, the database rolls back to its previous state rather than losing funds. This taught me that in both software and engineering, failure modes matter as much as the happy path.
+          </p>
+
+          <div class="project-contributions">
+            <h3>Key Features</h3>
+            <ul>
+              <li>Account creation and closure with persistent SQLite storage — accounts and full transaction history survive across sessions.</li>
+              <li>Deposits, withdrawals, and wire transfers with overdraft protection and atomic rollback on failure.</li>
+              <li>Interest calculation applied per account, with the transaction logged to history.</li>
+              <li>Color-coded terminal UI using ANSI escape codes — clear, readable, and professional without any external UI library.</li>
+              <li>40-test <code>unittest</code> suite covering account creation, balance operations, transfers, edge cases, and error handling — all passing in under 0.5 seconds.</li>
+              <li>Relational database schema with a normalized <code>accounts</code> and <code>transactions</code> table, using foreign keys and typed transaction records.</li>
+            </ul>
+          </div>
+
+          <p>
+            Writing 40 unit tests before shipping wasn't just a course requirement — it changed how I think. Every function I write now, I ask: how would I prove this works? That mindset carries directly into engineering: test your assumptions, document your results, and don't trust a system you haven't verified under stress.
+          </p>
+
+          <span class="project-status-badge">Completed — Elite 102 Final Project</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Project Navigation ── -->
+  <nav class="project-nav-bar">
+    <div class="container">
+      <div class="project-nav-inner">
+        <a href="project-dv3x2-aia.html" class="project-nav-item">
+          <span class="project-nav-label">← Previous</span>
+          <span class="project-nav-name">DV3x2 | AIA Architecture Research</span>
+        </a>
+        <a href="projects.html" class="project-nav-center">All Projects</a>
+        <a href="project-bmw-e30.html" class="project-nav-item next">
+          <span class="project-nav-label">Back to Start →</span>
+          <span class="project-nav-name">1983 BMW E30 Restoration</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Hikmet Bisen</div>
+        <div class="footer-peak">K2 — 8,611m</div>
+        <div class="footer-links">
+          <a href="projects.html">Projects</a>
+          <a href="../Resume/resume.html">Resume</a>
+          <a href="https://www.linkedin.com/in/hikmetbisen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Hikmet4416" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
